@@ -1,0 +1,220 @@
+
+
+
+@mixin flexCenter($flex-type, $align-type, $justifyType, $direction) {
+    display: $flex-type;
+    align-items: $align-type;
+    justify-content: $justifyType;
+    flex-direction: $direction;
+
+}
+
+.choices {
+    
+    margin-top: 14rem;
+    margin-bottom: 14rem;
+
+    #{&}__container {
+        width: 80%;
+        margin-inline: auto;
+
+        .box {
+            width: 100%;
+            background: rgba(65, 64, 64, 0.7);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 5px 10px 8px rgb(0, 0, 0);
+
+            .box__container {
+                width: 90%;
+                margin-inline: auto;
+                @include flexCenter(flex, center, center , column);
+                opacity: 1;
+
+
+                h3 {
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    color: $secondary-color;
+                    margin-bottom: 1rem;
+
+                }
+
+
+                .bottom {
+                    
+                    @include flexCenter(flex, center, center , column);
+
+
+                    img {
+                        width: 100%;
+                        display: block;
+                        margin-right: .6rem;
+                        border: 1px solid $secondary-color;
+                        border-radius: 10px;
+
+
+                    }
+
+
+                
+                    p {
+                        margin-top: .4rem;
+                        color: white;
+                        font-size: 1rem;
+                        text-align: center;
+
+
+
+                    }
+
+
+
+
+                }
+
+
+
+
+            }
+        }
+
+
+
+    
+
+
+
+
+
+    }
+
+
+}
+
+@media (min-width: 674px) {
+
+    .choices {
+
+        #{&}__container {
+
+            .box {
+                
+
+                .box__container {
+                    @include flexCenter(flex, center,center ,column );
+
+                    .bottom {
+                        @include flexCenter(flex, start, center , row );
+
+                        img {
+                            width: 40%;
+                        }
+
+                        p {
+                          
+                          font-size: 1rem;
+                          text-align: left;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 786px) {
+
+    .choices {
+
+        #{&}__container {
+            @include flexCenter(flex, center, center, row );
+
+
+            .box {
+                width: 38%;
+                margin-left: 2rem;
+                .box__container {
+                    
+                    @include flexCenter(flex, center, center, column );
+
+
+                    .bottom {
+                        @include flexCenter(flex, center, center , column );
+
+                        img {
+                            width: 100%;
+                        }
+
+                        p {
+                          
+                          font-size: 80%;
+                          text-align: left;
+                        }
+                    }
+
+                }
+
+
+            }
+
+        }
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

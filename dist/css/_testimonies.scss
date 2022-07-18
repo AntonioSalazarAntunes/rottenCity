@@ -1,0 +1,94 @@
+@mixin flexCenter($flex-type, $align-type, $justifyType, $direction) {
+    display: $flex-type;
+    align-items: $align-type;
+    justify-content: $justifyType;
+    flex-direction: $direction;
+
+}
+
+.testimonies {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+
+    #{&}__container {
+       width: 60%;
+       margin-inline: auto;
+       @include flexCenter(flex, center, space-between, column);
+
+       .testimony {
+        margin: 2rem;
+        text-align: center;
+        @include flexCenter(flex, center, space-between, column);
+
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            border: 2px solid $secondary-color;
+
+
+        }
+
+        h4 {
+            color: $secondary-color;
+            font-size: 1.8rem;
+            font-style: italic;
+        }
+
+        p {
+            color: $secondary-color;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+       }
+
+    }
+
+
+
+}
+
+
+
+@media (min-width: 978px) {
+
+    .testimonies {
+  
+    
+        #{&}__container {
+           
+           @include flexCenter(flex, center, space-between, row);
+            
+           .testimony {
+            margin: 2rem;
+            text-align: center;
+            @include flexCenter(flex, center, space-between, column);
+    
+            
+    
+            h4 {
+                color: $secondary-color;
+                font-size: 1.8rem;
+                font-style: italic;
+            }
+    
+            p {
+                color: $secondary-color;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+    
+           }
+    
+           
+        }
+    
+    
+    
+    }
+    
+    
+
+}
+

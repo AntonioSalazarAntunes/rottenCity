@@ -1,0 +1,64 @@
+@mixin flexCenter($flex-type, $align-type, $justifyType, $direction) {
+    display: $flex-type;
+    align-items: $align-type;
+    justify-content: $justifyType;
+    flex-direction: $direction;
+
+}
+
+
+.download {
+    margin-top: 14rem;
+    margin-bottom: 14rem;
+
+    #{&}__container {
+        width: 40%;
+        margin-inline: auto;
+        @include flexCenter(flex, center, space-around, column);
+
+
+
+        button {
+            padding: .7em 1em;
+            font-size: 1.5rem;
+            border: .5px solid $secondary-color;
+            border-radius: 25px;
+            background: $background-color;
+            color: $secondary-color;
+            margin-top: 1rem;
+
+            &:hover {
+                background: black;
+                color: $background-color;
+            }
+
+
+        }
+    }
+}
+
+
+
+
+
+
+@media (min-width: 790px) {
+
+    .download {
+        #{&}__container {
+            @include flexCenter(flex, center, space-evenly, row);
+
+            button {
+                margin-top: 0;
+                margin-right: 1rem;
+            }
+        }
+
+    }
+
+}
+
+
+
+
+

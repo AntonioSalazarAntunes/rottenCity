@@ -1,0 +1,145 @@
+
+@mixin flexCenter($flex-type, $justifyType, $direction) {
+    display: $flex-type;
+    align-items: center;
+    justify-content: $justifyType;
+    flex-direction: $direction;
+
+}
+
+header {
+
+    background: transparent;
+    color: $secondary-color;
+    position: fixed;
+    width: 100vw;
+    z-index: 50;
+    
+
+    .#{&}__container {
+        @include flexCenter(flex, space-between, row);
+        width: 80%;
+        margin-inline: auto;
+        padding: 1rem;
+
+        .left {
+            h3 {
+                font-weight: map-get($font-weights, "medium");
+            }
+        }
+
+        .hamburger-button {
+            width: 30px;
+            height: 20px;
+            @include flexCenter(none, space-between, column);
+            position: absolute;
+            top: 1.2rem;
+            right: 3rem;
+
+
+
+
+            span {
+                height: 4px;
+                width: 100%;
+                background: white;
+            }
+
+        }
+
+
+
+
+        .right {
+          
+            .nav-links {
+                @include flexCenter(flex,center, row);
+                list-style: none;
+        
+
+
+                .link {
+                    margin-inline: .5rem;
+
+                    a {
+                        text-decoration: none;
+                        color: $secondary-color;
+                        text-transform: uppercase;
+                        transition: all .4s ease;
+
+                        &:hover {
+                            color: $hover-color;
+                            transition: all .4s ease;
+                        }
+
+
+
+
+                    }
+
+
+
+
+
+                }
+
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+@media (max-width: 460px) {
+
+    header {
+
+        .#{&}__container {
+            flex-direction: column;
+            align-items: flex-start;
+
+            .hamburger-button {
+                display: flex;
+            }
+
+            .right {
+                width: 100%;
+                display: none;
+                transition: all 1s ease;
+                
+
+                .nav-links {
+                    margin-top: 1rem;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .link {
+                        text-align: center;
+                        margin: .5rem 0;
+                    }
+                }
+
+            }
+        }
+
+        .right.active {
+            display: flex;
+            transition: all 1s ease;
+        }
+        
+
+
+
+    }
+    
+
+
+}
+
+
+
+

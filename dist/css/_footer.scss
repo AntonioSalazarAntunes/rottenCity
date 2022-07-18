@@ -1,0 +1,144 @@
+@mixin flexCenter($flex-type, $align-type, $justifyType, $direction) {
+    display: $flex-type;
+    align-items: $align-type;
+    justify-content: $justifyType;
+    flex-direction: $direction;
+
+}
+
+
+footer {
+    margin-top: 10rem;
+    background: $primary-color;
+    padding: 1.5rem;
+
+    .#{&}__container {
+        width: 80%;
+        margin-inline: auto;
+        color: $secondary-color;
+        @include flexCenter(flex, flex-start, space-between, column);
+
+        .left {
+            margin-bottom: 1rem;
+        }
+
+        .center {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+
+            p {
+                font-size: .9rem;
+            }
+
+            hr {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .links {
+                i {
+                    margin-right: .4rem;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        .right {
+            margin-top: 1rem;
+
+            ul {
+                list-style: none;
+
+                li {
+
+                    margin-top: .9rem;
+                    a {
+                        text-decoration: none;
+                        color: $secondary-color;
+                    }
+                }
+
+            }
+
+            .copyright {
+                margin-top: 2rem;
+                color: $secondary-color;
+                font-weight: 300;
+                font-size: .7rem;
+            }
+            
+
+        }
+    }
+
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 790px) {
+
+    footer {
+
+
+        .#{&}__container {
+
+            @include flexCenter(flex, flex-start, space-around, row);
+
+            .left {
+                margin: 0 1rem;
+                width: 60%;
+                font-size: 1rem;
+
+
+            }
+
+            .center {
+                margin: 0 1rem;
+            }
+
+            .right {
+                margin: 0 1rem;
+
+                ul {
+                    li:first-child {
+                        margin-top: 0;
+                    }
+                }
+
+                .copyright {
+                    margin-top: 10rem;
+                }
+
+            }
+
+
+
+
+
+
+
+
+        }
+
+    }
+
+}

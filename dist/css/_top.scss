@@ -1,0 +1,98 @@
+@mixin flexCenter($flex-type, $align-type, $justifyType, $direction) {
+    display: $flex-type;
+    align-items: $align-type;
+    justify-content: $justifyType;
+    flex-direction: $direction;
+
+}
+
+
+.top {
+  
+    margin-bottom: 3rem;
+
+    #{&}__container {
+        width: 100%;
+        margin-inline: auto;
+        display: flex;
+        position: relative;
+
+        .text__container {
+
+          position: absolute;
+          top: 40%;
+          left: 28%;
+          @include flexCenter(flex, center, space-between, column);
+
+
+          h4 {
+            color: $secondary-color;
+            text-transform: uppercase;
+            font-size: 4.5vw;
+            text-align: center;
+            font-weight: 700;
+          }
+    
+          h6 {
+            text-transform: lowercase;
+            color: $secondary-color;
+            font-size: 3vw;
+            font-weight: 300;
+            text-shadow: 1.5px 1.5px $primary-color;
+          }
+    
+          
+
+
+        }
+
+
+      img {
+        width: 100%;
+        opacity: 0.5;
+        border-top: 2px solid $secondary-color;
+        border-bottom: 2px solid $secondary-color;
+      }
+
+
+
+
+
+    }
+
+
+    
+
+
+
+}
+
+
+
+
+
+@media (min-width: 540px) {
+  .top {
+
+    #{&}__container {
+
+       .text__container {
+
+        button {
+          font-size: 1rem;
+        }
+
+       }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

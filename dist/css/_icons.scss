@@ -1,0 +1,59 @@
+@mixin flexCenter($flex-type, $align-type, $justifyType, $direction) {
+    display: $flex-type;
+    align-items: $align-type;
+    justify-content: $justifyType;
+    flex-direction: $direction;
+
+}
+
+.icons {
+    margin-top: 14rem;
+    margin-bottom: 14rem;
+
+    #{&}__container {
+        width: 80%;
+        margin-inline: auto;
+        @include flexCenter(flex, center, space-around, column);
+
+        .icon {
+            @include flexCenter(flex, center, center, column);
+            color: $secondary-color;
+            margin-bottom: 3rem;
+
+            i {
+                font-size: 3rem;
+                margin-bottom: .6rem;
+            }
+
+            h5 {
+                font-size: 2rem;
+                font-weight: 300;
+               
+            }
+        }
+    }
+}
+
+
+
+
+ @media(min-width: 788px) {
+    .icons {
+        #{&}__container {
+            @include flexCenter(flex, center, space-evenly, row)
+        }
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
